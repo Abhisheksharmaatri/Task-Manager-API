@@ -1,3 +1,11 @@
+1. Run npm install to install the required dependencies
+
+2. Create a sentive.js file with the following metrics as exports:
+   1. EmailApiKey: The Elastic email api key
+   2. databaseUrl: The mongoDb Database URL
+   3. jwtSecret: A secret Key for JSON web token(Choose any but keep it long and secret)
+
+
 The first method is to define an the structure of the first things that is an task.
 
 1. Create a error handler, it will be called after every error in try catch bloks
@@ -27,3 +35,5 @@ The first method is to define an the structure of the first things that is an ta
 5. Add the functionality of pulling the task out of the parent task list.
 
 6. Add authentication
+
+
