@@ -3,13 +3,17 @@
     "test": "mocha"
   },
   "dependencies": {
+    "@elasticemail/elasticemail-client": "^4.0.23",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
+    "chai-http": "^4.4.0",
     "elasticemail": "^0.2.0",
+    "elasticemail-webapiclient": "^2.0.14",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.6.0",
-    "mongoose": "^7.2.4"
+    "mongoose": "^7.2.4",
+    "nodemailer": "^6.9.3"
   },
   "devDependencies": {
     "chai": "^4.3.7",

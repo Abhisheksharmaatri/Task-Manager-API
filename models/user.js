@@ -21,7 +21,11 @@ const userSchema = new Schema({
             ref: 'Task-List'
         },
         status: String
-    }]
+    }],
+    verificationStatus: {
+        type: Boolean,
+        default: false
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);

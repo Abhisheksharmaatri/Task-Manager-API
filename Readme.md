@@ -4,6 +4,15 @@ The first method is to define an the structure of the first things that is an ta
 
 2. Add the validation
 
+//Tasks
+
+1. I am adding the email verification
+   1. First update the user model with the verification status(boolean)
+   2. Update create user controller with verification status
+   3. Add the email to the verification email sender.
+   4. Create an another controller to user to verify email
+   5. Add another controller to get the validation email again
+
 //Notes
 
 1. Use
@@ -27,3 +36,6 @@ The first method is to define an the structure of the first things that is an ta
 5. Add the functionality of pulling the task out of the parent task list.
 
 6. Add authentication
+
+7. Tasks
+   1. I am adding a new database for priority of tasks

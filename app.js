@@ -38,7 +38,7 @@ app.use('/', (req, res, next) => {
     console.log('Query: ', req.query);
     next();
 })
-app.use('/task', taskRouter); //Tested
+app.use('/task', taskRouter);
 
 app.use('/list', taskListRouter); //Tested
 
@@ -51,7 +51,7 @@ app.use(errorController.error);
 
 //Database Setup
 mongoose
-    .connect(senstive.databaseUrl)
+    .connect(senstive.testDatabaseUrl)
     .then(result => {
         console.log('connected');
         app.listen(4000);

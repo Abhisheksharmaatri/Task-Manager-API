@@ -13,6 +13,24 @@ const taskSchema = new Schema({
     },
     due: {
         type: Date
+    },
+    priority: {
+        type: Boolean,
+        default: false
+    },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    listId: {
+        type: Schema.Types.ObjectId,
+        ref: 'TaskList',
+        required: true
+    },
+    completed: {
+        type: Boolean,
+        default: false
     }
 })
 

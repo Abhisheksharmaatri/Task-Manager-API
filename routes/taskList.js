@@ -10,9 +10,9 @@ router.post('/update', taskListController.updateTaskList); //Tested
 
 router.post('/delete', taskListController.deleteTaskList); // Tested
 
-router.post('/addCollaborator', taskListController.addCollaborator); //Tested
+router.post('/add-collaborator', taskListController.addCollaborator); //Tested
 
-router.post('/removeCollaborator', taskListController.removeCollaborator); //Tested
+router.post('/remove-collaborator', taskListController.removeCollaborator); //Tested
 
 router.post('/addTask', taskListController.addTask); //Tested
 

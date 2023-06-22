@@ -14,7 +14,6 @@ router.post('/login', userController.login); //Tested
 
 router.post('/logout', userController.logout); //Tested
 
-router.post('/getUser', userController.getUser); //Tested
-
+router.post('/get-user', userController.getUser); //Tested
 
 module.exports = router;

@@ -292,7 +292,9 @@ exports.addTask = async function (req, res, next) {
         title: title,
         description: description,
         status: 'todo',
-        collaborators: []
+        collaborators: [],
+        userId: req.body.userId,
+        listId: listId
     });
     let savedTask;
     try {

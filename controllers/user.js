@@ -3,10 +3,16 @@ const senstive = require('../senstive');
 
 //Packages
 const bcrypt = require('bcryptjs');
-const ElasticEmail = require('elasticemail');
-const elasticEmailClient = ElasticEmail.createClient({
-    apiKey: senstive.EmailApiKey
-});
+const eeClient = require('elasticemail-webapiclient').client;
+
+const options = {
+    apiKey: senstive.EmailApiKey,
+    apiUri: 'https://api.elasticemail.com/',
+    apiVersion: 'v2'
+}
+
+const EE = new eeClient(options);
+
 
 const jwt = require('jsonwebtoken');
 //Models
@@ -20,16 +26,6 @@ exports.createUser = async function (req, res, next) {
     const email = req.body.email;
     const name = req.body.name;
     const password = req.body.password;
-
-    let existingUser;
-    try {
-        existingUser = await User.findOne({
-            email: email
-        });
-    } catch (err) {
-        err.message = 'Server Error';
-        return next(err);
-    }
     let hashedPW
     try {
         hashedPW = await bcrypt.hash(password, 12);
@@ -37,7 +33,15 @@ exports.createUser = async function (req, res, next) {
         err.message = 'Server Error';
         return next(err);
     }
-
+    let existingUser;
+    try {
+        existingUser = await User.findOne({
+            email: email
+        });
+    } catch (err) {
+        err.message = 'User Already Exists';
+        return next(err);
+    }
     const user = new User({
         email: email,
         name: name,
@@ -49,8 +53,7 @@ exports.createUser = async function (req, res, next) {
         savedUser = await user.save();
     } catch (err) {
         err.message = 'Server Error';
-        err.statusCode = 500;
-        throw err;
+        return next(err);
     }
     res.status(201).json({
         message: 'User Created Successfully',
