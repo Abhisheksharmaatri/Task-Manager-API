@@ -1,41 +1,95 @@
-The first method is to define an the structure of the first things that is an task.
+Task Manager API
 
-1. Create a error handler, it will be called after every error in try catch bloks
+This is a Node.js and Express project called "Task Manager API" that provides a set of routes for managing tasks, task lists, and user authentication. The API is designed to allow users to create, update, delete, and retrieve tasks, task lists, and user information. The routes are protected with authentication middleware to ensure secure access.
+Routes
 
-2. Add the validation
-
-//Tasks
-
-1. I am adding the email verification
-   1. First update the user model with the verification status(boolean)
-   2. Update create user controller with verification status
-   3. Add the email to the verification email sender.
-   4. Create an another controller to user to verify email
-   5. Add another controller to get the validation email again
-
-//Notes
-
-1. Use
-   return next(err) with synchornous code and
-   next(err) with asynchornous
-
-2. Add a message with every error., inside the try and catch blocks.
-
-3. Types of error i am encounter
-
-   1. User not Found: For such cases i will redirect my user to login page.
-   2. Server Error: At such case i need to log server error and furthr information to my admin
-   3. Element not found: In these user elments as task and taks list are not founf, requires furthur research.
-   4. Not logged in
-
-4. test about the use of
-
-   1. return next(error); or
-   2. next (error);
-
-5. Add the functionality of pulling the task out of the parent task list.
-
-6. Add authentication
-
-7. Tasks
-   1. I am adding a new database for priority of tasks
+1. Task Routes
+   1. POST /task/create
+      Creates a new task.
+      Requires authentication.
+      Endpoint tested and functional.
+   2. POST /task/update
+      Updates an existing task.
+      Requires authentication.
+      Endpoint tested and functional.
+   3. POST /task/delete
+      Deletes a task.
+      Requires authentication.
+      Endpoint tested and functional.
+   4. POST /task/get
+      Retrieves a task.
+      Requires authentication.
+      Endpoint tested and functional.
+   5. POST /task/get-all
+      Retrieves all tasks.
+      Requires authentication.
+      Endpoint tested and functional.
+   6. POST /task/add-priority
+      Adds priority to a task.
+      Requires authentication.
+      Endpoint tested and functional.
+   7. POST /task/remove-priority
+      Removes priority from a task.
+      Requires authentication.
+      Endpoint tested and functional.
+   8. POST /task/get-priority
+      Retrieves priority tasks.
+      Requires authentication.
+      Endpoint tested and functional.
+   9. POST /task/complete
+      Marks a task as completed.
+      Requires authentication.
+      Endpoint tested and functional.
+   10. POST /task/uncomplete
+       Marks a task as uncompleted.
+       Requires authentication.
+       Endpoint tested and functional.
+   11. POST /task/get-uncompleted
+       Retrieves uncompleted tasks.
+       Requires authentication.
+       Endpoint tested and functional.
+   12. POST /task/get-completed
+       Retrieves completed tasks.
+       Requires authentication.
+       Endpoint tested and functional.
+2. Task List Routes
+   1. POST /task-list/create
+      Creates a new task list.
+      Endpoint tested and functional.
+   2. POST /task-list/update
+      Updates an existing task list.
+      Endpoint tested and functional.
+   3. POST /task-list/delete
+      Deletes a task list.
+      Endpoint tested and functional.
+   4. POST /task-list/add-collaborator
+      Adds a collaborator to a task list.
+      Endpoint tested and functional.
+   5. POST /task-list/remove-collaborator
+      Removes a collaborator from a task list.
+      Endpoint tested and functional.
+   6. POST /task-list/add-task
+      Adds a task to a task list.
+      Endpoint tested and functional.
+   7. POST /task-list/remove-task
+      Removes a task from a task list.
+      Endpoint tested and functional.
+3. User Routes
+   1. POST /user/create
+      Creates a new user.
+      Endpoint tested and functional.
+   2. POST /user/update
+      Updates user information.
+      Endpoint tested and functional.
+   3. POST /user/delete
+      Deletes a user.
+      Endpoint tested and functional.
+   4. POST /user/login
+      Authenticates a user and generates a session token.
+      Endpoint tested and functional.
+   5. POST /user/logout
+      Logs out a user by invalidating the session token.
+      Endpoint tested and functional.
+   6. POST /user/get-user
+      Retrieves user information.
+      Endpoint tested and functional.
