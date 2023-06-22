@@ -51,7 +51,7 @@ app.use(errorController.error);
 
 //Database Setup
 mongoose
-    .connect(senstive.testDatabaseUrl)
+    .connect(senstive.databaseUrl)
     .then(result => {
         console.log('connected');
         app.listen(4000);
