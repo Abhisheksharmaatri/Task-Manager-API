@@ -1,4 +1,11 @@
-Task Manager API
+1. Run npm install to install the required dependencies
+
+2. Create a sentive.js file with the following metrics as exports:
+   1. EmailApiKey: The Elastic email api key
+   2. databaseUrl: The mongoDb Database URL
+   3. jwtSecret: A secret Key for JSON web token(Choose any but keep it long and secret)
+
+The first method is to define an the structure of the first things that is an task.
 
 This is a Node.js and Express project called "Task Manager API" that provides a set of routes for managing tasks, task lists, and user authentication. The API is designed to allow users to create, update, delete, and retrieve tasks, task lists, and user information. The routes are protected with authentication middleware to ensure secure access.
 Routes
